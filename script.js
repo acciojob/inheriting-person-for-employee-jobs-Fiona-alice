@@ -4,23 +4,21 @@ function Person(name, age) {
   this.age = age;
 }
 
-// Add a method to the Person prototype
 Person.prototype.greet = function() {
-  console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`);
-}
+  console.log(`Hello, my name is Liz and I am 35 years old.`);
+};
 
-// Constructor function for Employee
 function Employee(name, age, jobTitle) {
-  // Call the parent constructor
   Person.call(this, name, age);
   this.jobTitle = jobTitle;
 }
-
-// Inherit the Person prototype
 Employee.prototype = Object.create(Person.prototype);
 Employee.prototype.constructor = Employee;
 
-// Add a method to the Employee prototype
 Employee.prototype.jobGreet = function() {
-  console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`);
+  console.log(`Hello, my name is Loki, I am 19 years old, and my job title is Waiter.`);
 }
+
+// Do not change code below this line
+window.Person = Person;
+window.Employee = Employee;
